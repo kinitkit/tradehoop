@@ -40,12 +40,14 @@
             @php
                 if(count($priceList) > 0) {
                     foreach($priceList as $priceListItem){
+                        $price = number_format($priceListItem->price, 2, ".", ",");
+
                         echo "
                             <tr>
                                 <td>{$priceListItem->itemCode}</td>
                                 <td>{$priceListItem->name}</td>
                                 <td>{$priceListItem->description}</td>
-                                <td>PHP {$priceListItem->price}</td>
+                                <td>PHP {$price}</td>
                                 <td></td>
                                 <td>{$priceListItem->unit}</td>
                                 <td>

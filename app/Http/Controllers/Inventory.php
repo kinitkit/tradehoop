@@ -455,6 +455,7 @@ class Inventory extends Controller
         $username = session('tradehoopusername');
 
         if (isset($warehouseID) && isset($code) && isset($amount)) {
+            $amount = str_replace(",", "", $amount);
             $data = array('price' => $amount, 'warehouseID' => $warehouseID, 'code' => $code, 'username' => $username);
             DB::table('warehouseitemprice')->insert($data);
 

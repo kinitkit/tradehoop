@@ -53,11 +53,12 @@
                     foreach($priceList as $priceListItem){
                         $time = strtotime($priceListItem->DT_revision);
                         $time = date("M d, Y | h:i a", $time);
+                        $price = number_format($priceListItem->price, 2, ".", ",");
 
                         echo "
                             <tr>
                                 <td>{$time}</td>
-                                <td>PHP {$priceListItem->price}</td>
+                                <td>PHP {$price}</td>
                                 <td>{$priceListItem->username}</td>
                             </tr>
                         ";
