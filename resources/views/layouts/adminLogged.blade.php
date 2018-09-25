@@ -38,6 +38,8 @@
         <?php if(session('tradehoopusername') != ''){ ?>
             @include('includes.admin.footer')
         <?php } ?>
+
+        @stack('scripts-content')
     </body>
 </html>
 <!-- LAYOUT -->

@@ -93,6 +93,8 @@ td, tr{
     vertical-align: baseline;
 }
 
+
+
 /*********************************************************************************************/
 /*CUSTOMER*/
 /*********************************************************************************************/
@@ -104,7 +106,7 @@ td, tr{
 
 .top1{
     background-color: #6d7c90;
-    position: absolute;
+    position: relative;
     padding: 10px 0px;
     color: white;
     left: 0px;
@@ -128,12 +130,11 @@ td, tr{
         }
 
 .top2{
-    position: absolute;
+    position: relative;
     padding: 10px 0px;
     color: white;
     left: 0px;
     right: 0px;
-    top: 35px;
 }
 
     .top2 .imgTop{
@@ -145,8 +146,29 @@ td, tr{
         max-width: 300px;   
         padding: 15px 0px;
     }
+
+.top3{
+    right: 0;
+    left: 0;
+    background-color: #DCC8AC;
+}
+    .top3 a{
+        color: #FFF;
+        font-weight: bold;
+        padding: 20px;
+        display: inline-block;
+        margin: 0px;
+    }
+
+    .top3 a:hover{
+        background-color: #F98831;
+    }
+
+    .active{
+        background-color: #F98831;
+    }
+
 .banner{
-    margin-top: 121px;
     background-color: black;
     height: 80vh;
     left: 0;
@@ -197,3 +219,33 @@ td, tr{
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+
+/*********************************************************************************************/
+/*SPECIFIC PAGES*/
+/*********************************************************************************************/
+
+/*LOGIN AND REGISTER*/
+
+.login-register{
+    background: linear-gradient(to bottom, rgba(0,0,0,.8) 100%,rgba(0,0,0,.8) 100%), url('../images/customerlogin-background.jpg');
+    background-size: cover;
+    min-height: 80vh;
+}
+
+    .login-register .form-horizontal{
+        margin-top: 20vh;
+        background-color: rgba(255,255,255,.6);
+        padding: 60px 20px 50px;
+        color: #222;
+        border-radius: 2px;
+    }
+
+    .login-register .login-btn{
+        color: #FFF;
+        background-color: #222;
+    }
+
+        .login-register .login-btn:hover{
+            color: #AAA;
+        }

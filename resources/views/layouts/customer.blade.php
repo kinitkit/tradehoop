@@ -13,6 +13,7 @@
     </head>
     <body>
         @include('includes.customer.head')
+        @yield('content')
     </body>
 </html>
 <!-- LAYOUT -->

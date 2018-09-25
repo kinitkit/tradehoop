@@ -42,6 +42,7 @@
         <div class="btn-group btn-group-sm" role="group" aria-label="...">
             <a role="button" href="/admininventorymanageorder?id={{$warehouse->id}}" class="btn btn-info">View Incoming deliveries</a>
             <a role="button" href="/admininventoryitem?id={{$warehouse->id}}" class="btn btn-info">View Inventory's Item History</a>
+            <a role="button" href="/admininventoryitemprice?id={{$warehouse->id}}" class="btn btn-info">Manage Items' Prices</a>
         </div>
     </div>
 </div>

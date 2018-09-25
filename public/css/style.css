@@ -1,5 +1,4 @@
-*
-{
+* {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -7,42 +6,37 @@
     box-sizing: border-box;
 }
 
-body
-{
+body {
     font-family: Arial;
     font-weight: 400;
     background: #f2f5f3;
     color: #6b7770;
     font-size: 11.5pt;
     line-height: 1em;
-	overflow-x: hidden;
+    overflow-x: hidden;
     width: 100%;
-	
-	/* Mobile Responsiveness */
-	-webkit-box-sizing: border-box;
+    /* Mobile Responsiveness */
+    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
-  
-h1, h2, h3, h4, h5, h6, h7
-{
-	font-family: Arial;
-	font-weight: 700;
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: Arial;
+    font-weight: 700;
     color: #00a8ec;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a
-{
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a {
     text-decoration: none;
     color: inherit;
 }
 
-br.clear
-{
-	clear: both;
+br.clear {
+    clear: both;
 }
 
-.line{
+.line {
     left: 0;
     right: 0;
     height: 4px;
@@ -50,63 +44,65 @@ br.clear
     margin: 5px 0px;
 }
 
-.space10{
+.space10 {
     margin: 10px 0px 0px 0px;
 }
 
-.space50{
+.space50 {
     margin: 50px 0px 0px 0px;
 }
 
-.space100{
+.space100 {
     margin: 100px 0px 0px 0px;
 }
 
-.leftAlign{
+.leftAlign {
     text-align: left;
 }
 
-.rightAlign{
+.rightAlign {
     text-align: right;
 }
 
-.centerAlign{
+.centerAlign {
     text-align: center;
 }
 
-.justifyAlign{
+.justifyAlign {
     text-align: justify;
 }
 
-td, tr{
+td, tr {
     vertical-align: baseline;
 }
 
-.tablePadded td, .tablePadded th{
+.tablePadded td, .tablePadded th {
     padding: 5px;
     max-width: 200px;
+}
+
+.ml-10 {
+    margin-left: 10px;
 }
 
 /**************************************************
                     ADMINISTRATOR
 **************************************************/
-.contentAdmin{
+
+.contentAdmin {
     max-width: 1200px;
     margin: 20px auto 0px auto;
 }
 
 /*----Login-----*/
 
-.login{
+.login {
     padding: 80px 0px;
 }
 
-
 /*----Currently Loggedin-----*/
 
-
-
-.main{
+.main {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -114,53 +110,53 @@ td, tr{
     flex-wrap: wrap;
 }
 
-    .main .adminSidebar{
-        background-color: #25323a;
-        color: #DDDDDD;
-        padding: 0px 0px 100px 0px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    
-        .main .adminSidebar .user{
-            left: 0;
-            right: 0;
-            padding: 20px 20px;
-        }   
-    
-        .main .adminSidebar .button{
-            padding: 10px 16px;
-            width: 100%;
-            left: 0;
-            right: 0;
-            text-align: left;
-            text-decoration: none;
-            color: #DDDDDD;
-            background-color: #2d3d3d;
-            border-radius: 0px;
-            white-space: pre-line;
-        }
-    
-        .main .adminSidebar .innerButton{
-            padding: 10px 0px 10px 30px;
-            width: 100%;
-            left: 0;
-            right: 0;
-            text-align: left;
-            text-decoration: none;
-            color: #DDDDDD;
-            background-color: #2d3d3d;
-            border-radius: 0px;
-            white-space: pre-wrap;
-        }
+.main .adminSidebar {
+    background-color: #25323a;
+    color: #DDDDDD;
+    padding: 0px 0px 100px 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
-            .main .adminSidebar .button:hover, .main .adminSidebar .innerButton:hover{
-                background-color: #25323a;
-            }
+.main .adminSidebar .user {
+    left: 0;
+    right: 0;
+    padding: 20px 20px;
+}
 
-    .main .mainContent{
-        display: flex;
-        flex-direction: column;
-    }
+.main .adminSidebar .button {
+    padding: 10px 16px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    text-align: left;
+    text-decoration: none;
+    color: #DDDDDD;
+    background-color: #2d3d3d;
+    border-radius: 0px;
+    white-space: pre-line;
+}
+
+.main .adminSidebar .innerButton {
+    padding: 10px 0px 10px 30px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    text-align: left;
+    text-decoration: none;
+    color: #DDDDDD;
+    background-color: #2d3d3d;
+    border-radius: 0px;
+    white-space: pre-wrap;
+}
+
+.main .adminSidebar .button:hover, .main .adminSidebar .innerButton:hover {
+    background-color: #25323a;
+}
+
+.main .mainContent {
+    display: flex;
+    flex-direction: column;
+}

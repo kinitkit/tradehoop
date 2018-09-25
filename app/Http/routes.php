@@ -17,6 +17,30 @@ Route::get('/index', function () {
 
 Route::get('/home', ['uses' => 'Customer@home']);
 
+Route::get('/allcategories', function () {
+    return view('customer.allcategories');
+});
+
+Route::get('/aboutus', function () {
+    return view('customer.aboutus');
+});
+
+Route::get('/blog', function () {
+    return view('customer.blog');
+});
+
+Route::get('/customercare', function () {
+    return view('customer.customercare');
+});
+
+Route::get('/login', function () {
+    return view('customer.login');
+});
+
+Route::get('/register', function () {
+    return view('customer.register');
+});
+
 Route::get('/logout', ['uses' => 'LoginLogout@logout']);
 
 
@@ -98,6 +122,11 @@ Route::get('/admininventory', ['uses' => 'Inventory@inventory']);
 Route::post('/admininventory', ['uses' => 'Inventory@inventoryProceed']);
 
 Route::get('/admininventoryitem', ['uses' => 'Inventory@inventoryItem']);
+
+Route::get('/admininventoryitemprice', ['uses' => 'Inventory@inventoryItemPrice']);
+
+Route::get('/admininventoryitempricemanage', ['uses' => 'Inventory@inventoryItemPriceManage']);
+Route::post('/admininventoryitempricemanage', ['uses' => 'Inventory@inventoryItemPriceManagePost']);
 
 Route::get('/admininventorynewitem', ['uses' => 'Inventory@inventoryNewItem']);
 Route::post('/admininventorynewitemprocess', ['uses' => 'Inventory@inventoryNewItemProcess']);

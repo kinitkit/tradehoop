@@ -384,4 +384,82 @@ class Inventory extends Controller
         }
         return view('admin.inventory');
     }
+
+    public function inventoryItemPrice(Request $request)
+    {
+        if (isset($request->id)) {
+            $id = $request->id;
+
+            $warehouse = DB::table('warehouse')
+                ->where('id', '=', $id)
+                ->first();
+
+            $priceList = DB::table('warehouseitemprice AS WIP')
+                ->join(DB::raw(
+                    '(SELECT
+                        price,
+                        MAX(DT_revision) AS DT_revision,
+                        warehouseItemPriceID
+                    FROM
+                        warehouseitemprice
+                    WHERE warehouseID = ' . $id . '
+                    GROUP BY CODE)
+                AS temp_WIP'
+                ), function ($join) {
+                    $join->on('WIP.DT_revision', '=', 'temp_WIP.DT_revision');
+                })
+                ->rightJoin('item', 'item.code', '=', 'WIP.code')
+                ->select(
+                    'WIP.*',
+                    'item.code as itemCode',
+                    'item.name',
+                    'item.description',
+                    'item.unit'
+                )
+                ->where('item.status', '=', '1')
+                ->orderBy('item.name', 'ASC')
+                ->paginate(10);
+
+            return view('admin.inventoryItemPrice')->with(['warehouse' => $warehouse, 'priceList' => $priceList]);
+        }
+        return view('admin.inventory');
+    }
+
+    public function inventoryItemPriceManage(Request $request)
+    {
+        if (isset($request->id) && isset($request->code)) {
+            $id = $request->id;
+            $code = $request->code;
+
+            $warehouse = DB::table('warehouse')
+                ->where('id', '=', $id)
+                ->first();
+
+            $priceList = DB::table('warehouseitemprice AS WIP')
+                ->select('WIP.code', 'WIP.price', 'WIP.DT_revision', 'WIP.username')
+                ->where('WIP.code', '=', $code)
+                ->where('WIP.warehouseID', '=', $id)
+                ->orderBy('WIP.DT_revision', 'DESC')
+                ->paginate(10);
+
+            return view('admin.inventoryItemPriceManage')->with(['warehouse' => $warehouse, 'itemcode' => $code, 'priceList' => $priceList]);
+        }
+        return view('admin.inventory');
+    }
+
+    public function inventoryItemPriceManagePost(Request $request)
+    {
+        $amount = $request->input('amount');
+        $warehouseID = $request->input('warehouseid');
+        $code = $request->input('itemcode');
+        $username = session('tradehoopusername');
+
+        if (isset($warehouseID) && isset($code) && isset($amount)) {
+            $data = array('price' => $amount, 'warehouseID' => $warehouseID, 'code' => $code, 'username' => $username);
+            DB::table('warehouseitemprice')->insert($data);
+
+            return redirect('/admininventoryitempricemanage?id=' . $warehouseID . '&code=' . $code)->with(['message' => 'Item\'s price was successfully set']);
+        }
+        return view('admin.inventory')->with(['message' => 'Invalid Request!']);
+    }
 }
