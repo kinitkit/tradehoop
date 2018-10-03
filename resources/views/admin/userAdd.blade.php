@@ -58,17 +58,17 @@
                 <label class="control-label col-sm-3">User Type:</label>
                 <div class="col-sm-9">
                     <select class="form-control" name="usertype">
-                        <option>Master Administrator</option>
-                        <option>Administrator</option>
-                        <option>Inventory Manager</option>
-                        <option>Sales Manager</option>
-                        <option>Warehouse Manager</option>
-                        <option>Supplier</option>
-                        <option>Web Clerk</option>
-                        <option>Inventory Clerk</option>
-                        <option>Sales Clerk</option>
-                        <option>Packing Clerk</option>
-                        <option>Delivery Clerk</option>
+                        <option value="0">Master Administrator</option>
+                        <option value="1">Administrator</option>
+                        <option value="2">Inventory Manager</option>
+                        <option value="3">Sales Manager</option>
+                        <option value="4">Warehouse Manager</option>
+                        <option value="5">Supplier</option>
+                        <option value="6">Web Clerk</option>
+                        <option value="7">Inventory Clerk</option>
+                        <option value="8">Sales Clerk</option>
+                        <option value="9">Packing Clerk</option>
+                        <option value="10">Delivery Clerk</option>
                     </select>
                 </div>
             </div>

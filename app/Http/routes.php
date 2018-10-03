@@ -90,6 +90,10 @@ Route::post('/adminitemmanageitem', ['uses' => 'ItemManagement@adminItemmanageIt
 Route::get('/admincategory', ['uses' => 'ItemManagement@category']);
 Route::post('/admincategory', ['uses' => 'ItemManagement@categoryProceed']);
 
+Route::post('/admincategoryadd', ['uses' => 'ItemManagement@categoryAdd']);
+Route::post('/admincategoryremove', ['uses' => 'ItemManagement@categoryRemove']);
+Route::post('/admincategoryupdate', ['uses' => 'ItemManagement@categoryUpdate']);
+
 Route::get('/admincategorymanage', ['uses' => 'ItemManagement@categoryManage']);
 Route::post('/admincategorymanage', ['uses' => 'ItemManagement@categoryManageProceed']);
 
