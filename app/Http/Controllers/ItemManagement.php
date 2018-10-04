@@ -117,7 +117,7 @@ class ItemManagement extends Controller
 
     public function category()
     {
-        $category = DB::table('itemcategory')->where('status', '=', '1')->orderBy('parentCategoryID', 'asc')->orderBy('category', 'asc')->orderBy('id', 'asc')->get();
+        $category = DB::table('itemcategory')->where('isDeleted', '=', '0')->orderBy('parentCategoryID', 'asc')->orderBy('category', 'asc')->orderBy('id', 'asc')->get();
         $recursivedCategory = [];
 
         foreach ($category as $value) {
@@ -183,7 +183,7 @@ class ItemManagement extends Controller
         $categoryID = $request->input('categoryid');
 
         if (isset($categoryID)) {
-            $categories = DB::table('itemcategory')->where('parentCategoryID', '=', $categoryID)->where('status', '=', '1')->get();
+            $categories = DB::table('itemcategory')->where('parentCategoryID', '=', $categoryID)->where('isDeleted', '=', '0')->get();
             $categoriesinclusion = DB::table('itemcategoryinclusion')->where('categoryid', '=', $categoryID)->get();
             $canBeRemoved = false;
 

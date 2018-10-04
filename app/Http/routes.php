@@ -204,6 +204,10 @@ Route::get('/adminmessagecreatenew', ['uses' => 'Messaging@messagingNew']);
 
 Route::get('/settingsAddress', ['uses' =>'Settings@settingsAddress']);
 
+Route::post('/adminlocationadd', ['uses' =>'Settings@locationAdd']);
+Route::post('/adminlocationremove', ['uses' => 'Settings@locationRemove']);
+Route::post('/adminlocationupdate', ['uses' => 'Settings@locationUpdate']);
+
 Route::get('/settingsAddressNew', ['uses' =>'Settings@settingsAddressNew']);
 Route::post('/settingsAddressNew', ['uses' =>'Settings@settingsAddressNewProceed']);
 
